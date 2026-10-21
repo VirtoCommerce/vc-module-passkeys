@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+  <id>VirtoCommerce.Passkeys</id>
+  <version>3.1000.0</version>
+  <version-tag></version-tag>
+
+  <platformVersion>3.1087.0</platformVersion>
+  <dependencies>
+    <dependency id="VirtoCommerce.Xapi" version="3.1026.0" />
+  </dependencies>
+
+  <title>Virto Commerce Passkeys</title>
+  <description>Virto Commerce Passkeys</description>
+
+  <authors>
+    <author>Virto Commerce</author>
+  </authors>
+  <owners>
+    <owner>Virto Commerce</owner>
+  </owners>
+
+  <projectUrl>https://github.com/Virto Commerce/vc-module-passkeys</projectUrl>
+  <iconUrl>Modules/$(VirtoCommerce.Passkeys)/Content/logo.png</iconUrl>
+  <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+  <assemblyFile>VirtoCommerce.Passkeys.Web.dll</assemblyFile>
+  <moduleType>VirtoCommerce.Passkeys.Web.Module, VirtoCommerce.Passkeys.Web</moduleType>
+
+  <releaseNotes>First version.</releaseNotes>
+  <copyright>Copyright © 2026 Virto Commerce. All rights reserved</copyright>
+  <tags>extension module</tags>
+  <useFullTypeNameInSwagger>false</useFullTypeNameInSwagger>
+</module>

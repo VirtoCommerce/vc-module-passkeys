@@ -1,0 +1,91 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11605.240 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Web", "src\VirtoCommerce.Passkeys.Web\VirtoCommerce.Passkeys.Web.csproj", "{B59C7071-ABD4-4099-B181-001F83BE1B9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Data", "src\VirtoCommerce.Passkeys.Data\VirtoCommerce.Passkeys.Data.csproj", "{86AB8951-9859-46B8-B447-9590F310B721}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Core", "src\VirtoCommerce.Passkeys.Core\VirtoCommerce.Passkeys.Core.csproj", "{2D76DDFF-D274-42FB-9A26-914A71C67276}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Data.MySql", "src\VirtoCommerce.Passkeys.Data.MySql\VirtoCommerce.Passkeys.Data.MySql.csproj", "{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Data.PostgreSql", "src\VirtoCommerce.Passkeys.Data.PostgreSql\VirtoCommerce.Passkeys.Data.PostgreSql.csproj", "{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Data.SqlServer", "src\VirtoCommerce.Passkeys.Data.SqlServer\VirtoCommerce.Passkeys.Data.SqlServer.csproj", "{21AF9647-0153-4F8F-9F7A-663F17B47AF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Xapi", "src\VirtoCommerce.Passkeys.Xapi\VirtoCommerce.Passkeys.Xapi.csproj", "{FE4DCD5C-8203-41EA-9266-E69E3783F8B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FA612ED2-6B92-49BC-B40E-30559C946830}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.Passkeys.Tests", "tests\VirtoCommerce.Passkeys.Tests\VirtoCommerce.Passkeys.Tests.csproj", "{E599EE74-F760-4ECA-8D23-FAE47181EC82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F5A5EE0-B8B5-40E7-92BB-47396F8E73E2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		module.ignore = module.ignore
+		README.md = README.md
+		VirtoCommerce.Passkeys.sln.DotSettings = VirtoCommerce.Passkeys.sln.DotSettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B59C7071-ABD4-4099-B181-001F83BE1B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59C7071-ABD4-4099-B181-001F83BE1B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59C7071-ABD4-4099-B181-001F83BE1B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59C7071-ABD4-4099-B181-001F83BE1B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86AB8951-9859-46B8-B447-9590F310B721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86AB8951-9859-46B8-B447-9590F310B721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86AB8951-9859-46B8-B447-9590F310B721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86AB8951-9859-46B8-B447-9590F310B721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D76DDFF-D274-42FB-9A26-914A71C67276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D76DDFF-D274-42FB-9A26-914A71C67276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D76DDFF-D274-42FB-9A26-914A71C67276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D76DDFF-D274-42FB-9A26-914A71C67276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AF9647-0153-4F8F-9F7A-663F17B47AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AF9647-0153-4F8F-9F7A-663F17B47AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AF9647-0153-4F8F-9F7A-663F17B47AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AF9647-0153-4F8F-9F7A-663F17B47AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4DCD5C-8203-41EA-9266-E69E3783F8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4DCD5C-8203-41EA-9266-E69E3783F8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4DCD5C-8203-41EA-9266-E69E3783F8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4DCD5C-8203-41EA-9266-E69E3783F8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E599EE74-F760-4ECA-8D23-FAE47181EC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E599EE74-F760-4ECA-8D23-FAE47181EC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E599EE74-F760-4ECA-8D23-FAE47181EC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E599EE74-F760-4ECA-8D23-FAE47181EC82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B59C7071-ABD4-4099-B181-001F83BE1B9D} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{86AB8951-9859-46B8-B447-9590F310B721} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{2D76DDFF-D274-42FB-9A26-914A71C67276} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{2F9ECFC8-1E1D-4970-B3E0-63A3F04A3CF7} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{7E3B20DE-A8F1-41F4-BFB8-9124F9D26DCB} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{21AF9647-0153-4F8F-9F7A-663F17B47AF5} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{FE4DCD5C-8203-41EA-9266-E69E3783F8B5} = {B2ED53FA-544D-4781-A0C1-9AE1AD668CE9}
+		{E599EE74-F760-4ECA-8D23-FAE47181EC82} = {FA612ED2-6B92-49BC-B40E-30559C946830}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8AEE583-C5E8-417E-AFB2-DC0DAFBEF500}
+	EndGlobalSection
+EndGlobal

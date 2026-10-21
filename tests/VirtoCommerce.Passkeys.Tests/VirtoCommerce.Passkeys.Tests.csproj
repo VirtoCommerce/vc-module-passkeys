@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <SonarQubeTestProject>true</SonarQubeTestProject>
+    <NoWarn>NU1608</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="10.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VirtoCommerce.Passkeys.Core\VirtoCommerce.Passkeys.Core.csproj" />
+    <ProjectReference Include="..\..\src\VirtoCommerce.Passkeys.Data\VirtoCommerce.Passkeys.Data.csproj" />
+    <ProjectReference Include="..\..\src\VirtoCommerce.Passkeys.Xapi\VirtoCommerce.Passkeys.Xapi.csproj" />
+    <ProjectReference Include="..\..\src\VirtoCommerce.Passkeys.Web\VirtoCommerce.Passkeys.Web.csproj" />
+  </ItemGroup>
+</Project>
