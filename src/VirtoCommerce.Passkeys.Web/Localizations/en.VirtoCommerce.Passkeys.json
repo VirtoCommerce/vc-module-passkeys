@@ -1,24 +1,13 @@
 {
   "passkeys": {
-    "blades": {
-      "hello-world": {
-        "title": "Hello world blade"
-      }
-    }
-  },
-  "permissions": {
-    "passkeys:access": "Open Passkeys menu",
-    "passkeys:create": "Create Passkeys related data",
-    "passkeys:read": "View Passkeys related data",
-    "passkeys:update": "Update Passkeys related data",
-    "passkeys:delete": "Delete Passkeys related data"
-  },
-  "settings": {
-    "Passkeys": {
-      "Enabled": {
-        "title": "Passkeys Enabled",
-        "description": "Passkeys Enabled setting"
-      }
+    "labels": {
+      "title": "Passkeys",
+      "created": "Created"
+    },
+    "key-states": {
+      "device-only": "Device only",
+      "backed-up": "Backed up",
+      "not-backed-up": "Not backed up"
     }
   }
 }

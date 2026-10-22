@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Passkeys",
+      "created": "Erstellt"
+    },
+    "key-states": {
+      "device-only": "Nur auf dem Gerät",
+      "backed-up": "Gesichert",
+      "not-backed-up": "Nicht gesichert"
+    }
+  }
+}

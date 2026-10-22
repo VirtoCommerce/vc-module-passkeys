@@ -1,0 +1,22 @@
+<div class="sign-in-key__content" ng-controller="VirtoCommerce.Passkeys.passkeySignInKeyController">
+  <span class="sign-in-key__icon" ng-class="keyState.icon"></span>
+  <div class="sign-in-key__info">
+    <div class="sign-in-key__name" ng-if="rename.key !== key">
+      <span class="list-t sign-in-key__name-text">{{ key.name || ('platform.blades.sign-in-methods-list.labels.unnamed-key' | translate) }}</span>
+      <a href="" class="form-edit" ng-if="signInMethod.canRenameKey" ng-click="startRenameKey(key)" title="{{ 'platform.commands.edit' | translate }}"><span class="form-ico fa fa-pencil"></span></a>
+    </div>
+    <div class="sign-in-key__name" ng-if="rename.key === key">
+      <div class="form-input sign-in-key__name-input">
+        <input id="signInKeyName" type="text" ng-model="rename.name" ng-keyup="renameKeyOnKeyUp($event, signInMethod)" ng-blur="cancelRenameKey()" />
+        <div class="sign-in-key__name-actions" ng-mousedown="$event.preventDefault()">
+          <a href="" ng-click="renameKey(signInMethod)" title="{{ 'platform.commands.save' | translate }}"><span class="fa fa-check"></span></a>
+          <a href="" ng-click="cancelRenameKey()" title="{{ 'platform.commands.cancel' | translate }}"><span class="fa fa-close"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="list-descr">
+      <span ng-if="keyState.title">{{ keyState.title | translate }}</span>
+      <span ng-if="key.createdDate">&middot; {{ 'passkeys.labels.created' | translate }} {{ key.createdDate | amParse | date:'mediumDate' }}</span>
+    </div>
+  </div>
+</div>

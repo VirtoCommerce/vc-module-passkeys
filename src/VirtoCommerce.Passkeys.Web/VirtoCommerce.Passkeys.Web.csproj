@@ -21,9 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Core\VirtoCommerce.Passkeys.Core.csproj" />
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Data\VirtoCommerce.Passkeys.Data.csproj" />
-    <ProjectReference Include="..\VirtoCommerce.Passkeys.Data.MySql\VirtoCommerce.Passkeys.Data.MySql.csproj" />
-    <ProjectReference Include="..\VirtoCommerce.Passkeys.Data.PostgreSql\VirtoCommerce.Passkeys.Data.PostgreSql.csproj" />
-    <ProjectReference Include="..\VirtoCommerce.Passkeys.Data.SqlServer\VirtoCommerce.Passkeys.Data.SqlServer.csproj" />
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Xapi\VirtoCommerce.Passkeys.Xapi.csproj" />
   </ItemGroup>
 </Project>

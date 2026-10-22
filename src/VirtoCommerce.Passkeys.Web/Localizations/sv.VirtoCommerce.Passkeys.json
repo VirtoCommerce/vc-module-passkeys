@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Nyckelkoder",
+      "created": "Skapad"
+    },
+    "key-states": {
+      "device-only": "Endast på enheten",
+      "backed-up": "Säkerhetskopierad",
+      "not-backed-up": "Inte säkerhetskopierad"
+    }
+  }
+}

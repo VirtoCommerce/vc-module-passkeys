@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Pääsyavaimet",
+      "created": "Luotu"
+    },
+    "key-states": {
+      "device-only": "Vain laitteella",
+      "backed-up": "Varmuuskopioitu",
+      "not-backed-up": "Ei varmuuskopioitu"
+    }
+  }
+}

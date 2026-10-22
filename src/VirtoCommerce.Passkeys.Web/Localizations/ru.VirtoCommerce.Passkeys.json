@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Ключи доступа",
+      "created": "Создан"
+    },
+    "key-states": {
+      "device-only": "Только на устройстве",
+      "backed-up": "Есть резервная копия",
+      "not-backed-up": "Нет резервной копии"
+    }
+  }
+}

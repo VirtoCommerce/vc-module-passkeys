@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Claves de acceso",
+      "created": "Creada"
+    },
+    "key-states": {
+      "device-only": "Solo en el dispositivo",
+      "backed-up": "Con copia de seguridad",
+      "not-backed-up": "Sin copia de seguridad"
+    }
+  }
+}

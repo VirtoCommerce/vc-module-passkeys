@@ -1,0 +1,13 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "通行密钥",
+      "created": "创建于"
+    },
+    "key-states": {
+      "device-only": "仅限此设备",
+      "backed-up": "已备份",
+      "not-backed-up": "未备份"
+    }
+  }
+}
