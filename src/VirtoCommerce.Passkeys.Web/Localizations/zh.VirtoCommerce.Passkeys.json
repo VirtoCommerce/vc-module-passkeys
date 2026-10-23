@@ -8,6 +8,9 @@
       "device-only": "仅限此设备",
       "backed-up": "已备份",
       "not-backed-up": "未备份"
+    },
+    "errors": {
+      "already-registered": "此设备已有您账户的通行密钥。"
     }
   }
 }

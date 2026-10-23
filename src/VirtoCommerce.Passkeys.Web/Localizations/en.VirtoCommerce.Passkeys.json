@@ -8,6 +8,9 @@
       "device-only": "Device only",
       "backed-up": "Backed up",
       "not-backed-up": "Not backed up"
+    },
+    "errors": {
+      "already-registered": "This device already has a passkey for your account."
     }
   }
 }
