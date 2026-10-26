@@ -21,7 +21,7 @@ public class PasskeyServiceTests
     private readonly List<(string UserId, UserPasskeyInfo Passkey)> _storedPasskeys = [];
 
     [Fact]
-    public async Task CreateAsync_Should_Fail_When_ThePasskeyWasCreatedForAnotherUser()
+    public async Task CreateAsync_Should_Fail_When_PasskeyWasCreatedForAnotherUser()
     {
         // Arrange
         var user = new ApplicationUser { Id = "user-id", UserName = "buyer" };

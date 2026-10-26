@@ -30,7 +30,7 @@ public class PasskeyGrantTypeHandlerTests
     private readonly Mock<UserManager<ApplicationUser>> _userManager = new(Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
 
     [Fact]
-    public async Task HandleAsync_Should_ReturnMissingParameter_When_TheCredentialIsMissing()
+    public async Task HandleAsync_Should_ReturnMissingParameter_When_CredentialIsMissing()
     {
         // Arrange
         var context = CreateContext(credential: null);
@@ -49,7 +49,7 @@ public class PasskeyGrantTypeHandlerTests
     [Theory]
     [InlineData(PasskeyOutcome.InvalidPasskey, ModuleConstants.Security.FailureReason.InvalidPasskey)]
     [InlineData(PasskeyOutcome.PasskeyDisabled, SignInFailureReason.NotAllowed)]
-    public async Task HandleAsync_Should_RecordTheReasonAndReturnTheGenericError_When_VerificationFails(PasskeyOutcome outcome, string failureReason)
+    public async Task HandleAsync_Should_RecordReasonAndReturnGenericError_When_VerificationFails(PasskeyOutcome outcome, string failureReason)
     {
         // Arrange
         _passkeyService
@@ -69,7 +69,7 @@ public class PasskeyGrantTypeHandlerTests
     }
 
     [Fact]
-    public async Task HandleAsync_Should_RecordTheReasonAndReturnTheGenericError_When_AuthenticationThrows()
+    public async Task HandleAsync_Should_RecordReasonAndReturnGenericError_When_AuthenticationThrows()
     {
         // Arrange
         _passkeyService

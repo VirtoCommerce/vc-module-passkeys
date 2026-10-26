@@ -27,7 +27,7 @@ public class PasskeySignInMethodProviderTests
     [Theory]
     [InlineData(_windowsHelloAaguid, "Windows Hello")]
     [InlineData(_unknownAaguid, null)]
-    public async Task GetSignInMethodsAsync_Should_NameTheKeyByAaguid(string aaguid, string expectedName)
+    public async Task GetSignInMethodsAsync_Should_NameKeyByAaguid(string aaguid, string expectedName)
     {
         // Arrange
         var user = new ApplicationUser { Id = "user-id" };
