@@ -10,6 +10,7 @@ using VirtoCommerce.Passkeys.Core.Services;
 using VirtoCommerce.Platform.Core.Events;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Security.SignInLog;
+using VirtoCommerce.Platform.Security;
 using VirtoCommerce.Platform.Security.OpenIddict;
 
 namespace VirtoCommerce.Passkeys.Data.Services;
@@ -21,9 +22,10 @@ public class PasskeyGrantTypeHandler(
     IEnumerable<ITokenClaimProvider> claimProviders,
     IEnumerable<ITokenRequestHandler> requestHandlers,
     IEventPublisher eventPublisher,
+    ITwoFactorSignInService twoFactorSignInService,
     IPasskeyService passkeyService,
     ILogger<PasskeyGrantTypeHandler> logger)
-    : GrantTypeHandlerBase(signInManager, identityOptions, requestValidators, claimProviders, requestHandlers, eventPublisher)
+    : GrantTypeHandlerBase(signInManager, identityOptions, requestValidators, claimProviders, requestHandlers, eventPublisher, twoFactorSignInService)
 {
     public override string GrantType => ModuleConstants.Security.GrantType;
 

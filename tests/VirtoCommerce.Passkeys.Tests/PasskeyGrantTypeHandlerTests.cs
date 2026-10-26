@@ -14,6 +14,7 @@ using VirtoCommerce.Passkeys.Data.Services;
 using VirtoCommerce.Platform.Core.Events;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Security.SignInLog;
+using VirtoCommerce.Platform.Security;
 using VirtoCommerce.Platform.Security.OpenIddict;
 using Xunit;
 
@@ -128,6 +129,7 @@ public class PasskeyGrantTypeHandlerTests
             claimProviders: [],
             requestHandlers: [],
             _eventPublisher.Object,
+            Mock.Of<ITwoFactorSignInService>(),
             _passkeyService.Object,
             NullLogger<PasskeyGrantTypeHandler>.Instance);
     }

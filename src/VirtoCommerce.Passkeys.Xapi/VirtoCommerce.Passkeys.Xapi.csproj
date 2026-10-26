@@ -4,7 +4,7 @@
     <SonarQubeTestProject>false</SonarQubeTestProject>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="VirtoCommerce.XFrontend.Data" Version="3.1008.0-alpha.59-vcst-6121-passkeys" />
+    <PackageReference Include="VirtoCommerce.XFrontend.Data" Version="3.1008.0-alpha.64-vcst-6121-passkeys" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Core\VirtoCommerce.Passkeys.Core.csproj" />

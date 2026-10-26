@@ -4,9 +4,9 @@
   <version>3.1000.0</version>
   <version-tag></version-tag>
 
-  <platformVersion>3.1090.0-alpha.13452-vcst-6121-passkeys</platformVersion>
+  <platformVersion>3.1091.0-alpha.13460-vcst-6121-passkeys</platformVersion>
   <dependencies>
-    <dependency id="VirtoCommerce.XFrontend" version="3.1008.0-alpha.59-vcst-6121-passkeys" />
+    <dependency id="VirtoCommerce.XFrontend" version="3.1008.0-alpha.64-vcst-6121-passkeys" />
   </dependencies>
 
   <title>Virto Commerce Passkeys</title>
