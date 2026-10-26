@@ -21,23 +21,6 @@ public class PasskeyServiceTests
     private readonly List<(string UserId, UserPasskeyInfo Passkey)> _storedPasskeys = [];
 
     [Fact]
-    public async Task AuthenticateAsync_Should_ReturnAccountLocked_When_TheUserIsLockedOut()
-    {
-        // Arrange
-        var user = new ApplicationUser { Id = "user-id", UserName = "buyer", LockoutEnd = DateTimeOffset.UtcNow.AddHours(1) };
-        _credentialOwners[_credential] = user;
-
-        var service = CreateService();
-
-        // Act
-        var result = await service.AuthenticateAsync(_credential);
-
-        // Assert
-        Assert.Equal(PasskeyOutcome.AccountLocked, result.Outcome);
-        Assert.Same(user, result.User);
-    }
-
-    [Fact]
     public async Task CreateAsync_Should_Fail_When_ThePasskeyWasCreatedForAnotherUser()
     {
         // Arrange
@@ -58,10 +41,6 @@ public class PasskeyServiceTests
     private PasskeyService CreateService()
     {
         var userManager = new Mock<UserManager<ApplicationUser>>(Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
-
-        userManager
-            .Setup(x => x.IsLockedOutAsync(It.IsAny<ApplicationUser>()))
-            .ReturnsAsync((ApplicationUser user) => user.LockoutEnd > DateTimeOffset.UtcNow);
 
         userManager
             .Setup(x => x.AddOrUpdatePasskeyAsync(It.IsAny<ApplicationUser>(), It.IsAny<UserPasskeyInfo>()))

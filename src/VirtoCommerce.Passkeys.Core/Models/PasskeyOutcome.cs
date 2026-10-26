@@ -6,5 +6,4 @@ public enum PasskeyOutcome
     Success,
     PasskeyDisabled,
     InvalidPasskey,
-    AccountLocked,
 }

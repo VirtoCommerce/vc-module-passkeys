@@ -32,7 +32,6 @@ public class PasskeyResult
         return Outcome switch
         {
             PasskeyOutcome.Success => SignInResult.Success,
-            PasskeyOutcome.AccountLocked => SignInResult.LockedOut,
             PasskeyOutcome.PasskeyDisabled => SignInResult.NotAllowed,
             _ => SignInResult.Failed,
         };

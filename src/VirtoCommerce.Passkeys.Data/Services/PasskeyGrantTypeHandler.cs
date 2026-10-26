@@ -68,15 +68,10 @@ public class PasskeyGrantTypeHandler(
         // The sign-in log always gets the real reason
         context.FailureReason = result.Outcome switch
         {
-            PasskeyOutcome.AccountLocked => SignInFailureReason.LockedOut,
             PasskeyOutcome.PasskeyDisabled => SignInFailureReason.NotAllowed,
             _ => ModuleConstants.Security.FailureReason.InvalidPasskey,
         };
 
-        return result.Outcome switch
-        {
-            PasskeyOutcome.AccountLocked when context.DetailedErrors => SecurityErrorDescriber.GetLockoutError(result.User),
-            _ => SecurityErrorDescriber.LoginFailed(),
-        };
+        return SecurityErrorDescriber.LoginFailed();
     }
 }

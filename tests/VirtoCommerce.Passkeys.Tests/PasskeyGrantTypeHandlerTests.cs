@@ -27,6 +27,7 @@ public class PasskeyGrantTypeHandlerTests
 
     private readonly Mock<IPasskeyService> _passkeyService = new();
     private readonly Mock<IEventPublisher> _eventPublisher = new();
+    private readonly Mock<UserManager<ApplicationUser>> _userManager = new(Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
 
     [Fact]
     public async Task HandleAsync_Should_ReturnMissingParameter_When_TheCredentialIsMissing()
@@ -48,7 +49,6 @@ public class PasskeyGrantTypeHandlerTests
     [Theory]
     [InlineData(PasskeyOutcome.InvalidPasskey, ModuleConstants.Security.FailureReason.InvalidPasskey)]
     [InlineData(PasskeyOutcome.PasskeyDisabled, SignInFailureReason.NotAllowed)]
-    [InlineData(PasskeyOutcome.AccountLocked, SignInFailureReason.LockedOut)]
     public async Task HandleAsync_Should_RecordTheReasonAndReturnTheGenericError_When_VerificationFails(PasskeyOutcome outcome, string failureReason)
     {
         // Arrange
@@ -88,18 +88,24 @@ public class PasskeyGrantTypeHandlerTests
         VerifySignInAttempt(ModuleConstants.Security.FailureReason.InvalidPasskey);
     }
 
-    [Fact]
-    public async Task HandleAsync_Should_ReturnTheLockoutError_When_TheAccountIsLockedAndDetailedErrorsAreOn()
+    [Theory]
+    [InlineData(true, "user_is_temporary_locked_out")]
+    [InlineData(false, "login_failed")]
+    public async Task HandleAsync_Should_RecordLockout_When_UserIsLockedOut(bool detailedErrors, string expectedErrorCode)
     {
         // Arrange
         var user = new ApplicationUser { Id = "user-id", UserName = "buyer" };
 
         _passkeyService
             .Setup(x => x.AuthenticateAsync(_credential))
-            .ReturnsAsync(PasskeyResult.Fail(PasskeyOutcome.AccountLocked, user));
+            .ReturnsAsync(PasskeyResult.Succeed(user));
+
+        _userManager
+            .Setup(x => x.IsLockedOutAsync(user))
+            .ReturnsAsync(true);
 
         var context = CreateContext(_credential);
-        context.DetailedErrors = true;
+        context.DetailedErrors = detailedErrors;
 
         var handler = CreateHandler();
 
@@ -108,19 +114,21 @@ public class PasskeyGrantTypeHandlerTests
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-        Assert.Equal(SecurityErrorDescriber.GetLockoutError(user).Code, ((TokenResponse)badRequest.Value).Code);
+        Assert.Equal(expectedErrorCode, ((TokenResponse)badRequest.Value).Code);
         VerifySignInAttempt(SignInFailureReason.LockedOut);
     }
 
     private PasskeyGrantTypeHandler CreateHandler()
     {
-        var userManager = new Mock<UserManager<ApplicationUser>>(Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
-
         var signInManager = new Mock<SignInManager<ApplicationUser>>(
-            userManager.Object,
+            _userManager.Object,
             Mock.Of<IHttpContextAccessor>(),
             Mock.Of<IUserClaimsPrincipalFactory<ApplicationUser>>(),
             null, null, null, null);
+
+        signInManager
+            .Setup(x => x.CanSignInAsync(It.IsAny<ApplicationUser>()))
+            .ReturnsAsync(true);
 
         return new PasskeyGrantTypeHandler(
             signInManager.Object,

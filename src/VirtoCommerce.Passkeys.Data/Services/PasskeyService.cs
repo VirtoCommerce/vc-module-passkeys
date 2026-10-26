@@ -40,11 +40,6 @@ public class PasskeyService(
 
         var user = assertionResult.User;
 
-        if (await _userManager.IsLockedOutAsync(user))
-        {
-            return PasskeyResult.Fail(PasskeyOutcome.AccountLocked, user);
-        }
-
         // Like SignInManager.PasskeySignInAsync, update the sign count and authenticator data
         var updateResult = await _userManager.AddOrUpdatePasskeyAsync(user, assertionResult.Passkey);
         if (!updateResult.Succeeded)
