@@ -21,7 +21,7 @@
   </owners>
 
   <projectUrl>https://github.com/VirtoCommerce/vc-module-passkeys</projectUrl>
-  <iconUrl>Modules/$(VirtoCommerce.Passkeys)/Content/logo.png</iconUrl>
+  <iconUrl>Modules/$(VirtoCommerce.Passkeys)/Content/logo.svg</iconUrl>
   <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
   <assemblyFile>VirtoCommerce.Passkeys.Web.dll</assemblyFile>
