@@ -10,6 +10,7 @@ using VirtoCommerce.Passkeys.Core.Models;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Security.SignInMethods;
+using VirtoCommerce.Platform.Security.SignInMethods;
 using static VirtoCommerce.Passkeys.Core.ModuleConstants.Security;
 
 namespace VirtoCommerce.Passkeys.Data.Services;
@@ -47,6 +48,12 @@ public class PasskeySignInMethodProvider(
     public virtual async Task<IdentityResult> RenameKeyAsync(ApplicationUser user, string signInMethodName, string keyId, string name)
     {
         var passkey = await userManager.GetPasskeyAsync(user, Base64Url.DecodeFromChars(keyId));
+
+        if (passkey is null)
+        {
+            return IdentityResult.Failed(SignInMethodErrorDescriber.SignInKeyNotFound());
+        }
+
         passkey.Name = name.WhiteSpaceToNull();
 
         return await userManager.AddOrUpdatePasskeyAsync(user, passkey);
