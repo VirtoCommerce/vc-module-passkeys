@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Chaves de acesso",
+    "SIGN_IN": "Entrar com uma chave de acesso",
+    "ADD": "Adicionar uma chave de acesso",
+    "STATES": {
+      "DEVICE_ONLY": "Somente no dispositivo",
+      "BACKED_UP": "Com backup",
+      "NOT_BACKED_UP": "Sem backup"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Este dispositivo já tem uma chave de acesso para a sua conta.",
+      "SAVE_FAILED": "Não foi possível salvar a chave de acesso. Tente novamente."
+    }
+  }
+}

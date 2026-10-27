@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "通行密钥",
+    "SIGN_IN": "使用通行密钥登录",
+    "ADD": "添加通行密钥",
+    "STATES": {
+      "DEVICE_ONLY": "仅限此设备",
+      "BACKED_UP": "已备份",
+      "NOT_BACKED_UP": "未备份"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "此设备已有您账户的通行密钥。",
+      "SAVE_FAILED": "无法保存通行密钥。请重试。"
+    }
+  }
+}

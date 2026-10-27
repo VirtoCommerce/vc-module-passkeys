@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Passkeys",
+    "SIGN_IN": "Mit Passkey anmelden",
+    "ADD": "Passkey hinzufügen",
+    "STATES": {
+      "DEVICE_ONLY": "Nur auf dem Gerät",
+      "BACKED_UP": "Gesichert",
+      "NOT_BACKED_UP": "Nicht gesichert"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Auf diesem Gerät ist bereits ein Passkey für Ihr Konto gespeichert.",
+      "SAVE_FAILED": "Der Passkey konnte nicht gespeichert werden. Versuchen Sie es erneut."
+    }
+  }
+}

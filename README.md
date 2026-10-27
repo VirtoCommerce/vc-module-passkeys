@@ -14,6 +14,7 @@ The module has no database of its own: passkeys are stored in the platform's Ide
 * **Readable key names** — a passkey without a name shows the authenticator's name, derived from its AAGUID
 * **Backup state** — each passkey shows whether it is `DeviceOnly`, `BackedUp` or `NotBackedUp`
 * **Storefront plugin** — adds the passkey sign-in button and passkey creation to the storefront through the XFrontend plugin system
+* **Admin Shell plugin** — adds "Sign in with a passkey" to the Admin Shell sign-in page and "Add a passkey" to its profile's sign-in methods, where passkeys are renamed and deleted (`AdminShellApp`, built into `plugins/admin-shell/`; `-p:SkipAdminShellPlugin=true` leaves it out)
 * **Browser detection** — the passkey button and passkey creation appear only when the browser supports WebAuthn
 * **Impersonation-safe** — passkeys cannot be created in an impersonated session
 
@@ -47,7 +48,7 @@ The module follows the Virto Commerce platform conventions:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Web Layer (API Controller, Admin UI, Storefront plugin)    │
+│  Web Layer (API, Admin UI and Admin Shell, Storefront)      │
 ├─────────────────────────────────────────────────────────────┤
 │  XAPI Layer (GraphQL queries and mutation)                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -83,7 +84,7 @@ The module follows the Virto Commerce platform conventions:
 | `VirtoCommerce.Passkeys.Core` | Core | Models, service interfaces, module constants |
 | `VirtoCommerce.Passkeys.Data` | Data | Passkey service, `passkey` grant type, sign-in method provider, known authenticator names |
 | `VirtoCommerce.Passkeys.Xapi` | XAPI | GraphQL queries and mutation |
-| `VirtoCommerce.Passkeys.Web` | Web | REST API controller, Admin UI, storefront plugin (`StorefrontApp`), module bootstrapping and DI registration |
+| `VirtoCommerce.Passkeys.Web` | Web | REST API controller, Admin UI, storefront plugin (`StorefrontApp`), Admin Shell plugin (`AdminShellApp`), module bootstrapping and DI registration |
 | `VirtoCommerce.Passkeys.Tests` | Tests | Unit tests |
 
 ### Key Services

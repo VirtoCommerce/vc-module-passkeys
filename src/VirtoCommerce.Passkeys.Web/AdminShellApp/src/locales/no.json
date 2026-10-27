@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Tilgangsnøkler",
+    "SIGN_IN": "Logg på med passnøkkel",
+    "ADD": "Legg til en passnøkkel",
+    "STATES": {
+      "DEVICE_ONLY": "Kun på enheten",
+      "BACKED_UP": "Sikkerhetskopiert",
+      "NOT_BACKED_UP": "Ikke sikkerhetskopiert"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Denne enheten har allerede en passnøkkel for kontoen din.",
+      "SAVE_FAILED": "Passnøkkelen kunne ikke lagres. Prøv igjen."
+    }
+  }
+}

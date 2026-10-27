@@ -1,0 +1,38 @@
+<Project>
+  <!-- The Admin Shell plugin: Vue sources here, built into plugins/admin-shell/ before publish, so vc-build Compress (locally
+       and in CI) packs it next to the storefront plugin. The platform serves it to the Admin Shell from
+       /modules/$(VirtoCommerce.Passkeys)/plugins/admin-shell/. -->
+  <PropertyGroup>
+    <AdminShellAppDir>$(MSBuildThisFileDirectory)</AdminShellAppDir>
+    <AdminShellPluginOutDir>$(MSBuildProjectDirectory)\plugins\admin-shell\</AdminShellPluginOutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="$(AdminShellAppDir)**;$(AdminShellPluginOutDir)**" />
+    <Content Remove="$(AdminShellAppDir)**;$(AdminShellPluginOutDir)**" />
+    <EmbeddedResource Remove="$(AdminShellAppDir)**;$(AdminShellPluginOutDir)**" />
+    <None Remove="$(AdminShellAppDir)**;$(AdminShellPluginOutDir)**" />
+  </ItemGroup>
+  <!-- -p:SkipAdminShellPlugin=true builds the module without it. -->
+  <Target Name="ReportAdminShellPluginSkipped" BeforeTargets="Publish" Condition="'$(SkipAdminShellPlugin)' == 'true'">
+    <Message Importance="high" Text="SkipAdminShellPlugin=true: the Admin Shell plugin is neither built nor copied into the package." />
+  </Target>
+  <Target Name="BuildAdminShellPlugin" BeforeTargets="Publish" Condition="'$(SkipAdminShellPlugin)' != 'true'">
+    <Exec Command="corepack --version" IgnoreExitCode="true" StandardOutputImportance="low" StandardErrorImportance="low">
+      <Output TaskParameter="ExitCode" PropertyName="AdminShellCorepackExitCode" />
+    </Exec>
+    <Error Condition="'$(AdminShellCorepackExitCode)' != '0'" Text="The Admin Shell plugin builds with Node.js and corepack, and corepack was not found. Use Node 22 or 24, which bundle it, or run npm install -g corepack. To build the module without the plugin: -p:SkipAdminShellPlugin=true." />
+    <!-- vc-build Clean deletes every bin folder, those inside node_modules too, and yarn would not restore them. -->
+    <RemoveDir Directories="$(AdminShellAppDir)node_modules" Condition="!Exists('$(AdminShellAppDir)node_modules\vite\bin\vite.js')" />
+    <!-- as the storefront plugin: the yarn that package.json pins, through corepack; UTF-8 logs -->
+    <Exec Command="corepack yarn install --immutable" WorkingDirectory="$(AdminShellAppDir)" StdOutEncoding="utf-8" />
+    <Exec Command="corepack yarn type-check" WorkingDirectory="$(AdminShellAppDir)" StdOutEncoding="utf-8" />
+    <Exec Command="corepack yarn build" WorkingDirectory="$(AdminShellAppDir)" StdOutEncoding="utf-8" />
+  </Target>
+  <!-- The platform probes {moduleRoot}/plugins/, but publish goes to {moduleRoot}/bin -->
+  <Target Name="PublishAdminShellPlugin" AfterTargets="Publish" DependsOnTargets="BuildAdminShellPlugin" Condition="'$(SkipAdminShellPlugin)' != 'true'">
+    <ItemGroup>
+      <AdminShellPluginFile Include="$(AdminShellPluginOutDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AdminShellPluginFile)" DestinationFiles="$(PublishDir)\..\plugins\admin-shell\%(RecursiveDir)%(Filename)%(Extension)" />
+  </Target>
+</Project>

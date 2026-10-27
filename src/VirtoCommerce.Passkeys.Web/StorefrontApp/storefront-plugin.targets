@@ -31,8 +31,9 @@
   </Target>
   <Target Name="PublishStorefrontPlugin" AfterTargets="Publish" DependsOnTargets="BuildStorefrontPlugin" Condition="'$(SkipStorefrontPlugin)' != 'true'">
     <ItemGroup>
-      <StorefrontPluginFile Include="$(StorefrontPluginOutDir)**\*" />
+      <!-- its own folder only: plugins/ also holds the Admin Shell plugin, which admin-shell-plugin.targets copies (or skips) -->
+      <StorefrontPluginFile Include="$(StorefrontPluginOutDir)vc-frontend\**\*" />
     </ItemGroup>
-    <Copy SourceFiles="@(StorefrontPluginFile)" DestinationFiles="$(PublishDir)\..\plugins\%(RecursiveDir)%(Filename)%(Extension)" />
+    <Copy SourceFiles="@(StorefrontPluginFile)" DestinationFiles="$(PublishDir)\..\plugins\vc-frontend\%(RecursiveDir)%(Filename)%(Extension)" />
   </Target>
 </Project>

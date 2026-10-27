@@ -1,0 +1,3 @@
+{
+  "remote": { "name": "passkeys_admin", "exposed": "./Module" }
+}

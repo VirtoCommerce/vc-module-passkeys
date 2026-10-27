@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "パスキー",
+    "SIGN_IN": "パスキーでサインイン",
+    "ADD": "パスキーを追加",
+    "STATES": {
+      "DEVICE_ONLY": "このデバイスのみ",
+      "BACKED_UP": "バックアップ済み",
+      "NOT_BACKED_UP": "未バックアップ"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "このデバイスには既にお使いのアカウントのパスキーがあります。",
+      "SAVE_FAILED": "パスキーを保存できませんでした。もう一度お試しください。"
+    }
+  }
+}

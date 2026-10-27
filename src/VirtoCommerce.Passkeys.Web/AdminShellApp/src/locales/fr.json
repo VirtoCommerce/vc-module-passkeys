@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Clés d'accès",
+    "SIGN_IN": "Se connecter avec une clé d'accès",
+    "ADD": "Ajouter une clé d'accès",
+    "STATES": {
+      "DEVICE_ONLY": "Sur l'appareil uniquement",
+      "BACKED_UP": "Sauvegardée",
+      "NOT_BACKED_UP": "Non sauvegardée"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Cet appareil possède déjà une clé d'accès pour votre compte.",
+      "SAVE_FAILED": "La clé d'accès n'a pas pu être enregistrée. Réessayez."
+    }
+  }
+}
