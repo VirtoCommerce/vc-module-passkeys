@@ -63,6 +63,12 @@ public class PasskeyGrantTypeHandler(
         return GrantValidationResult.Succeed(result.User);
     }
 
+    protected override Task<bool> IsTwoFactorRequiredAsync(TokenRequestContext context)
+    {
+        // Passkey sign-in skips two-factor, as SignInManager.PasskeySignInAsync does
+        return Task.FromResult(false);
+    }
+
     protected virtual TokenResponse BuildErrorResponse(TokenRequestContext context, PasskeyResult result)
     {
         // The sign-in log always gets the real reason
