@@ -1,4 +1,4 @@
-# Virto Commerce Passkeys Module
+# Passkeys Module
 
 ## Overview
 
