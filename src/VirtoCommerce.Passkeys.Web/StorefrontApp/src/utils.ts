@@ -10,7 +10,7 @@ export async function isPasskeyAutofillSupported(): Promise<boolean> {
   return (
     isPasskeySupported() &&
     "isConditionalMediationAvailable" in PublicKeyCredential &&
-    (await PublicKeyCredential.isConditionalMediationAvailable())
+    PublicKeyCredential.isConditionalMediationAvailable()
   );
 }
 
