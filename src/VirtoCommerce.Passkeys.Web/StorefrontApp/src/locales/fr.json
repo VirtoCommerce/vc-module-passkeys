@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Clés d'accès",
+        "add_button": "Ajouter une clé d'accès",
+        "description": "Connectez-vous avec Face ID, Touch ID, Windows Hello ou une clé de sécurité au lieu de votre mot de passe.",
+        "no_passkeys": "Vous n'avez pas encore de clé d'accès.",
+        "already_registered": "Cet appareil possède déjà une clé d'accès pour votre compte.",
+        "states": {
+          "DeviceOnly": "Uniquement sur l'appareil",
+          "BackedUp": "Sauvegardée",
+          "NotBackedUp": "Non sauvegardée"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Les clés d'accès sont désactivées",
+      "invalid_passkey_attestation": "La clé d'accès n'a pas pu être vérifiée",
+      "passkey_for_another_user": "La clé d'accès a été créée pour un autre utilisateur"
+    },
+    "sign_in": {
+      "button_text": "Se connecter avec une clé d'accès"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mutation CreatePasskey($command: InputCreatePasskeyType!) {
+  createPasskey(command: $command) {
+    succeeded
+    errors {
+      code
+      description
+    }
+  }
+}

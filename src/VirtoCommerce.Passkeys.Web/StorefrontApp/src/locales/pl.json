@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Klucze dostępu",
+        "add_button": "Dodaj klucz dostępu",
+        "description": "Loguj się za pomocą Face ID, Touch ID, Windows Hello lub klucza bezpieczeństwa zamiast hasła.",
+        "no_passkeys": "Nie masz jeszcze kluczy dostępu.",
+        "already_registered": "To urządzenie ma już klucz dostępu do Twojego konta.",
+        "states": {
+          "DeviceOnly": "Tylko na urządzeniu",
+          "BackedUp": "Z kopią zapasową",
+          "NotBackedUp": "Bez kopii zapasowej"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Klucze dostępu są wyłączone",
+      "invalid_passkey_attestation": "Nie udało się zweryfikować klucza dostępu",
+      "passkey_for_another_user": "Klucz dostępu został utworzony dla innego użytkownika"
+    },
+    "sign_in": {
+      "button_text": "Zaloguj się kluczem dostępu"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Passkeys",
+        "add_button": "Add passkey",
+        "description": "Sign in with Face ID, Touch ID, Windows Hello or a security key instead of your password.",
+        "no_passkeys": "You have no passkeys yet.",
+        "already_registered": "This device already has a passkey for your account.",
+        "states": {
+          "DeviceOnly": "Device only",
+          "BackedUp": "Backed up",
+          "NotBackedUp": "Not backed up"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Passkeys are disabled",
+      "invalid_passkey_attestation": "The passkey could not be verified",
+      "passkey_for_another_user": "The passkey was created for another user"
+    },
+    "sign_in": {
+      "button_text": "Sign in with Passkey"
+    }
+  }
+}

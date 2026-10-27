@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "通行密钥",
+        "add_button": "添加通行密钥",
+        "description": "使用 Face ID、Touch ID、Windows Hello 或安全密钥代替密码登录。",
+        "no_passkeys": "您还没有通行密钥。",
+        "already_registered": "此设备已有您账户的通行密钥。",
+        "states": {
+          "DeviceOnly": "仅限此设备",
+          "BackedUp": "已备份",
+          "NotBackedUp": "未备份"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "通行密钥已禁用",
+      "invalid_passkey_attestation": "无法验证通行密钥",
+      "passkey_for_another_user": "该通行密钥是为其他用户创建的"
+    },
+    "sign_in": {
+      "button_text": "使用通行密钥登录"
+    }
+  }
+}
