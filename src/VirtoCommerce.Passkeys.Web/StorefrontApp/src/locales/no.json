@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Tilgangsnøkler",
         "add_button": "Legg til tilgangsnøkkel",
-        "description": "Logg inn med fingeravtrykk, ansikt, skjermlås eller en maskinvarebasert sikkerhetsnøkkel i stedet for passordet ditt.",
+        "description": "Logg inn med fingeravtrykk, ansikt, enhetens PIN-kode eller en maskinvarebasert sikkerhetsnøkkel i stedet for passordet ditt.",
         "no_passkeys": "Du har ingen tilgangsnøkler ennå.",
         "already_registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din.",
         "states": {

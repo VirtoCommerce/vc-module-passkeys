@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Nycklar",
         "add_button": "Lägg till nyckel",
-        "description": "Logga in med fingeravtryck, ansikte, skärmlås eller en maskinvarubaserad säkerhetsnyckel i stället för ditt lösenord.",
+        "description": "Logga in med fingeravtryck, ansikte, enhetens pinkod eller en maskinvarubaserad säkerhetsnyckel i stället för ditt lösenord.",
         "no_passkeys": "Du har inga nycklar ännu.",
         "already_registered": "Den här enheten har redan en nyckel för ditt konto.",
         "states": {

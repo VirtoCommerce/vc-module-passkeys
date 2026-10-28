@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "通行密钥",
         "add_button": "添加通行密钥",
-        "description": "使用指纹、面容、屏幕锁定或硬件安全密钥代替密码登录。",
+        "description": "使用指纹、面容、设备 PIN 码或硬件安全密钥代替密码登录。",
         "no_passkeys": "您还没有通行密钥。",
         "already_registered": "此设备已有您账户的通行密钥。",
         "states": {

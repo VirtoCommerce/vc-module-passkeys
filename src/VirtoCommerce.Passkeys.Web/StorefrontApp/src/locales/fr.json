@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Clés d'accès",
         "add_button": "Ajouter une clé d'accès",
-        "description": "Connectez-vous avec votre empreinte digitale, votre visage, le verrouillage de l'écran ou une clé de sécurité matérielle au lieu de votre mot de passe.",
+        "description": "Connectez-vous avec votre empreinte digitale, votre visage, le code PIN de l'appareil ou une clé de sécurité matérielle au lieu de votre mot de passe.",
         "no_passkeys": "Vous n'avez pas encore de clé d'accès.",
         "already_registered": "Cet appareil possède déjà une clé d'accès pour votre compte.",
         "states": {

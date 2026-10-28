@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Pääsyavaimet",
         "add_button": "Lisää pääsyavain",
-        "description": "Kirjaudu sisään sormenjäljellä, kasvoilla, näytön lukituksella tai laitteistopohjaisella suojausavaimella salasanan sijaan.",
+        "description": "Kirjaudu sisään sormenjäljellä, kasvoilla, laitteen PIN-koodilla tai laitteistopohjaisella suojausavaimella salasanan sijaan.",
         "no_passkeys": "Sinulla ei ole vielä pääsyavaimia.",
         "already_registered": "Tällä laitteella on jo pääsyavain tilillesi.",
         "states": {

@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Passkeys",
         "add_button": "Passkey hinzufügen",
-        "description": "Melden Sie sich mit Ihrem Fingerabdruck, Ihrem Gesicht, der Displaysperre oder einem Hardware-Sicherheitsschlüssel statt mit Ihrem Passwort an.",
+        "description": "Melden Sie sich mit Ihrem Fingerabdruck, Ihrem Gesicht, der Geräte-PIN oder einem Hardware-Sicherheitsschlüssel statt mit Ihrem Passwort an.",
         "no_passkeys": "Sie haben noch keine Passkeys.",
         "already_registered": "Auf diesem Gerät ist bereits ein Passkey für Ihr Konto gespeichert.",
         "states": {

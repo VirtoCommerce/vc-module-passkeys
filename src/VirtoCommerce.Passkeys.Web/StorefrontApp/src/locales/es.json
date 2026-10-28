@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Claves de acceso",
         "add_button": "Añadir clave de acceso",
-        "description": "Inicia sesión con tu huella digital, tu rostro, el bloqueo de pantalla o una llave de seguridad de hardware en lugar de tu contraseña.",
+        "description": "Inicia sesión con tu huella digital, tu rostro, el PIN del dispositivo o una llave de seguridad de hardware en lugar de tu contraseña.",
         "no_passkeys": "Aún no tienes claves de acceso.",
         "already_registered": "Este dispositivo ya tiene una clave de acceso para tu cuenta.",
         "states": {

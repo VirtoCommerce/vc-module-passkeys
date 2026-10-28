@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Klucze dostępu",
         "add_button": "Dodaj klucz dostępu",
-        "description": "Loguj się za pomocą odcisku palca, twarzy, blokady ekranu lub sprzętowego klucza bezpieczeństwa zamiast hasła.",
+        "description": "Loguj się za pomocą odcisku palca, twarzy, kodu PIN urządzenia lub sprzętowego klucza bezpieczeństwa zamiast hasła.",
         "no_passkeys": "Nie masz jeszcze kluczy dostępu.",
         "already_registered": "To urządzenie ma już klucz dostępu do Twojego konta.",
         "states": {
