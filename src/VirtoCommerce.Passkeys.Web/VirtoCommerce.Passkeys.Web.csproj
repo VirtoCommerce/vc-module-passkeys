@@ -23,6 +23,6 @@
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Data\VirtoCommerce.Passkeys.Data.csproj" />
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Xapi\VirtoCommerce.Passkeys.Xapi.csproj" />
   </ItemGroup>
-  <Import Project="StorefrontApp\storefront-plugin.targets" />
   <Import Project="AdminShellApp\admin-shell-plugin.targets" />
+  <Import Project="StorefrontApp\storefront-plugin.targets" />
 </Project>
