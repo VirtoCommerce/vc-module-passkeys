@@ -29,6 +29,6 @@
 
   <releaseNotes>First version.</releaseNotes>
   <copyright>Copyright © 2026 Virto Commerce. All rights reserved</copyright>
-  <tags>passkeys webauthn authentication security</tags>
+  <tags>passkey webauthn authentication security</tags>
   <useFullTypeNameInSwagger>false</useFullTypeNameInSwagger>
 </module>
