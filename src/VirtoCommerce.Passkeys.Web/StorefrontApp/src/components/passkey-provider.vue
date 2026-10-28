@@ -1,8 +1,9 @@
 <template>
   <IdentityProvider
-    v-if="isPasskeySupported() && te('passkeys.sign_in.button_text')"
+    v-if="te('passkeys.sign_in.button_text')"
     :text="$t('passkeys.sign_in.button_text')"
     :icon="passkeyIcon"
+    :loading="loading"
     @sign-in="signInWithButton"
   />
 </template>
@@ -13,16 +14,16 @@ import { onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 import passkeyIcon from "../assets/passkey.svg";
 import { usePasskeySignIn } from "../composables/usePasskeySignIn";
-import { isPasskeyAutofillSupported, isPasskeySupported } from "../utils";
+import { isPasskeyAutofillSupported } from "../utils";
 
 interface IProps {
   returnUrl: string;
 }
 
-defineProps<IProps>();
+const props = defineProps<IProps>();
 
 const { te } = useI18n();
-const { signIn } = usePasskeySignIn();
+const { loading, signIn } = usePasskeySignIn();
 
 let isUnmounted = false;
 let autofillAbortController: AbortController | undefined;
@@ -40,7 +41,7 @@ async function startAutofillSignIn(): Promise<void> {
   }
 
   autofillAbortController = new AbortController();
-  await signIn({ mediation: "conditional", signal: autofillAbortController.signal });
+  await signIn({ returnUrl: props.returnUrl, mediation: "conditional", signal: autofillAbortController.signal });
 }
 
 function stopAutofillSignIn(): void {
@@ -51,7 +52,7 @@ async function signInWithButton(): Promise<void> {
   // The browser keeps only one WebAuthn request pending at a time
   stopAutofillSignIn();
 
-  await signIn();
+  await signIn({ returnUrl: props.returnUrl });
   await startAutofillSignIn();
 }
 </script>

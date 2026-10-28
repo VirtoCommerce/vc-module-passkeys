@@ -2462,9 +2462,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vc-frontend/core@https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5-alpha.5.vcst-6121-security-extension-points/vc-frontend-core-0.2.5-alpha.5.vcst-6121-security-extension-points.tgz":
-  version: 0.2.5-alpha.5.vcst-6121-security-extension-points
-  resolution: "@vc-frontend/core@https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5-alpha.5.vcst-6121-security-extension-points/vc-frontend-core-0.2.5-alpha.5.vcst-6121-security-extension-points.tgz"
+"@vc-frontend/core@https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5/vc-frontend-core-0.2.5.tgz":
+  version: 0.2.5
+  resolution: "@vc-frontend/core@https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5/vc-frontend-core-0.2.5.tgz"
   peerDependencies:
     "@apollo/client": ^3.14.0
     "@floating-ui/vue": ^2.0.1
@@ -2490,7 +2490,7 @@ __metadata:
       optional: true
     tw-elements:
       optional: true
-  checksum: 10c0/8a756a8b1591033f1b1f16e0a6e020e25d78087533b38abb6c96413e1fe12cd3d32e97dd21fc5df4b7cfcb53a39ca30f8cd005d22916020653fbfdb7fb54d8e3
+  checksum: 10c0/e5006b80a25b0dd6a023a97608fbc49a791c2217b8f59fbec0ae8279eead8e0067cd93d8e7f036c7b0baf0ce832c49f8edcce9c6079a395cd005805fc28f9edb
   languageName: node
   linkType: hard
 
@@ -5625,7 +5625,7 @@ __metadata:
     "@module-federation/vite": "npm:1.23.3"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@unhead/vue": "npm:^3.2.1"
-    "@vc-frontend/core": "https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5-alpha.5.vcst-6121-security-extension-points/vc-frontend-core-0.2.5-alpha.5.vcst-6121-security-extension-points.tgz"
+    "@vc-frontend/core": "https://github.com/VirtoCommerce/vc-frontend/releases/download/core-v0.2.5/vc-frontend-core-0.2.5.tgz"
     "@vitejs/plugin-vue": "npm:^6.0.8"
     "@vue/apollo-composable": "npm:^4.2.2"
     "@vue/eslint-config-typescript": "npm:^14.9.0"

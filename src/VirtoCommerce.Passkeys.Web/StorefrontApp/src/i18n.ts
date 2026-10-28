@@ -1,4 +1,4 @@
-import { globals, registerLocaleLoader } from "@vc-frontend/core";
+import { globals, Logger, registerLocaleLoader } from "@vc-frontend/core";
 import type { I18n, ILanguage } from "@vc-frontend/core";
 
 const FALLBACK_LOCALE = "en";
@@ -30,5 +30,7 @@ export function loadLocales(): void {
   const { locale } = globals.i18n.global;
   // i18n holds the full culture ("en-US"); the message files are two-letter, like the host's.
   const current = typeof locale === "object" ? locale.value : locale;
-  void mergeLocale(globals.i18n, current?.split("-")[0] || FALLBACK_LOCALE);
+  mergeLocale(globals.i18n, current?.split("-")[0] || FALLBACK_LOCALE).catch((error) =>
+    Logger.error(loadLocales.name, error),
+  );
 }

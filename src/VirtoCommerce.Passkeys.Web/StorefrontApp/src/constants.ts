@@ -5,5 +5,5 @@ export type PasskeyStateType = "DeviceOnly" | "BackedUp" | "NotBackedUp";
 export const PASSKEY_STATE_ICONS: Record<PasskeyStateType, string> = {
   DeviceOnly: "laptop",
   BackedUp: "cloud",
-  NotBackedUp: "cloud",
+  NotBackedUp: "cloud-off",
 };

@@ -1,6 +1,8 @@
 # passkeys: storefront plugin of VirtoCommerce.Passkeys
 
-<!-- What this plugin adds to the storefront: its pages and widgets, and who sees them. -->
+Adds "Sign in with Passkey" to the sign-in and impersonation pages, passkeys in the browser autofill of the
+sign-in email field, and the passkeys section of the account Security page. Shown for stores with `Passkey` among
+their authentication types.
 
 ## Working on this plugin
 
@@ -8,7 +10,7 @@
 > storefront, not what it does. The full docs: [the guide](https://github.com/VirtoCommerce/vc-frontend/blob/dev/client-app/core/federation/README.md).
 
 Built against `@vc-frontend/core` 0.2.5; it loads in storefronts whose facade satisfies
-`^0.2.5`. Options: router yes · i18n yes · apollo yes · vueuse no · tailwind no.
+`^0.2.5`. Options: router no · i18n yes · apollo yes · vueuse no · tailwind no.
 
 ### First run
 
@@ -24,7 +26,7 @@ Built against `@vc-frontend/core` 0.2.5; it loads in storefronts whose facade sa
    PowerShell or cmd: put the `APP_MODULES_FEDERATION_REMOTES=…` line in that `.env.local` instead (take it out
    afterwards: it replaces the platform's plugin list), and run the two commands one after the other.
 
-3. ✅ `https://localhost:3000/passkeys` shows the plugin's page.
+3. ✅ `https://localhost:3000/sign-in` shows "Sign in with Passkey" (for a store with `Passkey` among its authentication types).
 
 More setups (hot reload, a deployed module, an unreleased facade): [S2](https://github.com/VirtoCommerce/vc-frontend/blob/dev/client-app/core/federation/scenarios/s2-develop-locally.md).
 

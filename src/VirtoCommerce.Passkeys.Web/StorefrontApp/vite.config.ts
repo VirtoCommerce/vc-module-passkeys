@@ -18,9 +18,10 @@ export default defineConfig({
         // CONTRACT GATE: the facade versions this plugin runs on. A host OUTSIDE the range is
         // refused before any of your code runs. Keep it ^ the facade you pin: check:plugin-module
         // fails a range that reaches below the pin or past its breaking line (README, rule 5).
-        requiredHostVersion: "^0.2.5-alpha.5.vcst-6121-security-extension-points",
+        requiredHostVersion: "^0.2.5",
         sharedOverrides: {
           "@vueuse/core": false, // not shared: delete this line before importing it
+          "vue-router": false, // not shared: delete this line before importing it
         },
       }),
     ),

@@ -7,10 +7,13 @@ import {
   useNotifications,
   useSignMeIn,
 } from "@vc-frontend/core";
+import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { getPasskeyRequestOptions } from "../api/graphql";
 import { isPasskeyPromptCancelled } from "../utils";
 import type { IdentityErrorType } from "@vc-frontend/core";
+
+type PasskeySignInOptionsType = Omit<CredentialRequestOptions, "publicKey"> & { returnUrl?: string };
 
 const ANALYTICS_LOGIN_METHOD = "passkey";
 const GRANT_TYPE = "passkey";
@@ -23,12 +26,26 @@ export function usePasskeySignIn() {
   const { analytics } = useAnalytics();
   const notifications = useNotifications();
 
-  async function signIn(requestOptions: Omit<CredentialRequestOptions, "publicKey"> = {}): Promise<void> {
+  const loading = ref(false);
+
+  async function signIn(options: PasskeySignInOptionsType = {}): Promise<void> {
+    if (loading.value) {
+      return;
+    }
+
+    const { returnUrl, ...requestOptions } = options;
+    // An autofill request waits until the user picks a passkey, so it must not block the button meanwhile
+    let isLoadingOwner = requestOptions.mediation !== "conditional";
+    loading.value = isLoadingOwner;
+
     try {
       const credential = await getCredential(requestOptions);
       if (!credential) {
         return;
       }
+
+      isLoadingOwner = true;
+      loading.value = true;
 
       await authorizeWithGrant(
         new URLSearchParams({
@@ -39,7 +56,7 @@ export function usePasskeySignIn() {
         }),
       );
 
-      await signMeIn();
+      await signMeIn({ returnUrl });
 
       analytics("login", ANALYTICS_LOGIN_METHOD, { success: true });
     } catch (e) {
@@ -57,6 +74,10 @@ export function usePasskeySignIn() {
         single: true,
         text: (error && translate(error)) || t("common.messages.something_went_wrong"),
       });
+    } finally {
+      if (isLoadingOwner) {
+        loading.value = false;
+      }
     }
   }
 
@@ -74,6 +95,7 @@ export function usePasskeySignIn() {
   }
 
   return {
+    loading,
     signIn,
   };
 }
