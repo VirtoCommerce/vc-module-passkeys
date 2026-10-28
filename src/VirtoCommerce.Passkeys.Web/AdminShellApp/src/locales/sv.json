@@ -1,6 +1,6 @@
 {
   "PASSKEYS": {
-    "TITLE": "Nyckelkoder",
+    "TITLE": "Nycklar",
     "SIGN_IN": "Logga in med nyckel",
     "ADD": "Lägg till en nyckel",
     "STATES": {
@@ -9,7 +9,7 @@
       "NOT_BACKED_UP": "Inte säkerhetskopierad"
     },
     "ERRORS": {
-      "ALREADY_REGISTERED": "Den här enheten har redan ett nyckelpass för ditt konto.",
+      "ALREADY_REGISTERED": "Den här enheten har redan en nyckel för ditt konto.",
       "SAVE_FAILED": "Nyckeln kunde inte sparas. Försök igen."
     }
   }

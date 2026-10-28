@@ -2,11 +2,11 @@
   "passkeys": {
     "security_page": {
       "passkeys": {
-        "title": "Nyckelpass",
-        "add_button": "Lägg till nyckelpass",
-        "description": "Logga in med Face ID, Touch ID, Windows Hello eller en säkerhetsnyckel i stället för ditt lösenord.",
-        "no_passkeys": "Du har inga nyckelpass ännu.",
-        "already_registered": "Den här enheten har redan ett nyckelpass för ditt konto.",
+        "title": "Nycklar",
+        "add_button": "Lägg till nyckel",
+        "description": "Logga in med fingeravtryck, ansikte, skärmlås eller en maskinvarubaserad säkerhetsnyckel i stället för ditt lösenord.",
+        "no_passkeys": "Du har inga nycklar ännu.",
+        "already_registered": "Den här enheten har redan en nyckel för ditt konto.",
         "states": {
           "DeviceOnly": "Endast på enheten",
           "BackedUp": "Säkerhetskopierad",
@@ -15,12 +15,12 @@
       }
     },
     "identity_error": {
-      "passkeys_disabled": "Nyckelpass är inaktiverade",
-      "invalid_passkey_attestation": "Nyckelpasset kunde inte verifieras",
-      "passkey_for_another_user": "Nyckelpasset skapades för en annan användare"
+      "passkeys_disabled": "Nycklar är inaktiverade",
+      "invalid_passkey_attestation": "Nyckeln kunde inte verifieras",
+      "passkey_for_another_user": "Nyckeln skapades för en annan användare"
     },
     "sign_in": {
-      "button_text": "Logga in med nyckelpass"
+      "button_text": "Logga in med nyckel"
     }
   }
 }

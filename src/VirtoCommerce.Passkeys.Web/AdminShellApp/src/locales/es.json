@@ -2,7 +2,7 @@
   "PASSKEYS": {
     "TITLE": "Claves de acceso",
     "SIGN_IN": "Iniciar sesión con una clave de acceso",
-    "ADD": "Agregar una clave de acceso",
+    "ADD": "Añadir una clave de acceso",
     "STATES": {
       "DEVICE_ONLY": "Solo en el dispositivo",
       "BACKED_UP": "Con copia de seguridad",

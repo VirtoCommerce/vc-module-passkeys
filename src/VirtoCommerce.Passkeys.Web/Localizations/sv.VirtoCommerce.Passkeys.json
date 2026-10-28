@@ -1,7 +1,7 @@
 {
   "passkeys": {
     "labels": {
-      "title": "Nyckelkoder",
+      "title": "Nycklar",
       "created": "Skapad"
     },
     "key-states": {
@@ -10,7 +10,7 @@
       "not-backed-up": "Inte säkerhetskopierad"
     },
     "errors": {
-      "already-registered": "Den här enheten har redan ett nyckelpass för ditt konto."
+      "already-registered": "Den här enheten har redan en nyckel för ditt konto."
     }
   }
 }

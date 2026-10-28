@@ -10,7 +10,7 @@
       "not-backed-up": "Ikke sikkerhetskopiert"
     },
     "errors": {
-      "already-registered": "Denne enheten har allerede en passnøkkel for kontoen din."
+      "already-registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din."
     }
   }
 }

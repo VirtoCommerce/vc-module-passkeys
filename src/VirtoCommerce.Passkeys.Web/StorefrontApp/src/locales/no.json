@@ -2,25 +2,25 @@
   "passkeys": {
     "security_page": {
       "passkeys": {
-        "title": "Passnøkler",
-        "add_button": "Legg til passnøkkel",
-        "description": "Logg inn med Face ID, Touch ID, Windows Hello eller en sikkerhetsnøkkel i stedet for passordet ditt.",
-        "no_passkeys": "Du har ingen passnøkler ennå.",
-        "already_registered": "Denne enheten har allerede en passnøkkel for kontoen din.",
+        "title": "Tilgangsnøkler",
+        "add_button": "Legg til tilgangsnøkkel",
+        "description": "Logg inn med fingeravtrykk, ansikt, skjermlås eller en maskinvarebasert sikkerhetsnøkkel i stedet for passordet ditt.",
+        "no_passkeys": "Du har ingen tilgangsnøkler ennå.",
+        "already_registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din.",
         "states": {
-          "DeviceOnly": "Bare på enheten",
+          "DeviceOnly": "Kun på enheten",
           "BackedUp": "Sikkerhetskopiert",
           "NotBackedUp": "Ikke sikkerhetskopiert"
         }
       }
     },
     "identity_error": {
-      "passkeys_disabled": "Passnøkler er deaktivert",
-      "invalid_passkey_attestation": "Passnøkkelen kunne ikke bekreftes",
-      "passkey_for_another_user": "Passnøkkelen ble opprettet for en annen bruker"
+      "passkeys_disabled": "Tilgangsnøkler er deaktivert",
+      "invalid_passkey_attestation": "Tilgangsnøkkelen kunne ikke bekreftes",
+      "passkey_for_another_user": "Tilgangsnøkkelen ble opprettet for en annen bruker"
     },
     "sign_in": {
-      "button_text": "Logg inn med passnøkkel"
+      "button_text": "Logg inn med tilgangsnøkkel"
     }
   }
 }

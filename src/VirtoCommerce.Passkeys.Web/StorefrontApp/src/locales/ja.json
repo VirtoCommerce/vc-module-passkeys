@@ -4,13 +4,13 @@
       "passkeys": {
         "title": "パスキー",
         "add_button": "パスキーを追加",
-        "description": "パスワードの代わりに Face ID、Touch ID、Windows Hello、またはセキュリティキーでサインインします。",
+        "description": "パスワードの代わりに指紋、顔、画面ロック、またはハードウェア セキュリティキーでサインインします。",
         "no_passkeys": "パスキーはまだありません。",
         "already_registered": "このデバイスには既にお使いのアカウントのパスキーがあります。",
         "states": {
           "DeviceOnly": "このデバイスのみ",
           "BackedUp": "バックアップ済み",
-          "NotBackedUp": "バックアップなし"
+          "NotBackedUp": "未バックアップ"
         }
       }
     },

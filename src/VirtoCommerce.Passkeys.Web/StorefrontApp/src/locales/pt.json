@@ -4,7 +4,7 @@
       "passkeys": {
         "title": "Chaves de acesso",
         "add_button": "Adicionar chave de acesso",
-        "description": "Entre com Face ID, Touch ID, Windows Hello ou uma chave de segurança em vez da sua senha.",
+        "description": "Entre com sua impressão digital, seu rosto, o bloqueio de tela ou uma chave de segurança de hardware em vez da sua senha.",
         "no_passkeys": "Você ainda não tem chaves de acesso.",
         "already_registered": "Este dispositivo já tem uma chave de acesso para a sua conta.",
         "states": {
