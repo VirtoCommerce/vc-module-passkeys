@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Pääsyavaimet",
+        "add_button": "Lisää pääsyavain",
+        "description": "Kirjaudu sisään sormenjäljellä, kasvoilla, laitteen PIN-koodilla tai laitteistopohjaisella suojausavaimella salasanan sijaan.",
+        "no_passkeys": "Sinulla ei ole vielä pääsyavaimia.",
+        "already_registered": "Tällä laitteella on jo pääsyavain tilillesi.",
+        "states": {
+          "DeviceOnly": "Vain laitteella",
+          "BackedUp": "Varmuuskopioitu",
+          "NotBackedUp": "Ei varmuuskopioitu"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Pääsyavaimet ovat poissa käytöstä",
+      "invalid_passkey_attestation": "Pääsyavainta ei voitu vahvistaa",
+      "passkey_for_another_user": "Pääsyavain luotiin toiselle käyttäjälle"
+    },
+    "sign_in": {
+      "button_text": "Kirjaudu sisään pääsyavaimella"
+    }
+  }
+}

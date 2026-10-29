@@ -1,0 +1,16 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Passkey",
+      "created": "Creata il"
+    },
+    "key-states": {
+      "device-only": "Solo sul dispositivo",
+      "backed-up": "Con backup",
+      "not-backed-up": "Senza backup"
+    },
+    "errors": {
+      "already-registered": "Questo dispositivo ha già una passkey per il tuo account."
+    }
+  }
+}

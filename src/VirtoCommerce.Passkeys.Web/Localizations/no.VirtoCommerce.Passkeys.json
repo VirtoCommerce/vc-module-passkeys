@@ -1,0 +1,16 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Tilgangsnøkler",
+      "created": "Opprettet"
+    },
+    "key-states": {
+      "device-only": "Kun på enheten",
+      "backed-up": "Sikkerhetskopiert",
+      "not-backed-up": "Ikke sikkerhetskopiert"
+    },
+    "errors": {
+      "already-registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din."
+    }
+  }
+}

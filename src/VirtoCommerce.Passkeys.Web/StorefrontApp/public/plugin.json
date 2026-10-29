@@ -1,0 +1,7 @@
+{
+  "id": "passkeys",
+  "remote": {
+    "name": "passkeys",
+    "exposed": "./plugin"
+  }
+}

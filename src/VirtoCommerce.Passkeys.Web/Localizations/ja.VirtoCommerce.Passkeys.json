@@ -1,0 +1,16 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "パスキー",
+      "created": "作成日"
+    },
+    "key-states": {
+      "device-only": "このデバイスのみ",
+      "backed-up": "バックアップ済み",
+      "not-backed-up": "未バックアップ"
+    },
+    "errors": {
+      "already-registered": "このデバイスには既にお使いのアカウントのパスキーがあります。"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Klucze dostępu",
+    "SIGN_IN": "Zaloguj się kluczem dostępu",
+    "ADD": "Dodaj klucz dostępu",
+    "STATES": {
+      "DEVICE_ONLY": "Tylko na urządzeniu",
+      "BACKED_UP": "Z kopią zapasową",
+      "NOT_BACKED_UP": "Bez kopii zapasowej"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "To urządzenie ma już klucz dostępu do Twojego konta.",
+      "SAVE_FAILED": "Nie udało się zapisać klucza dostępu. Spróbuj ponownie."
+    }
+  }
+}

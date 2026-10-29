@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Pääsyavaimet",
+    "SIGN_IN": "Kirjaudu pääsyavaimella",
+    "ADD": "Lisää pääsyavain",
+    "STATES": {
+      "DEVICE_ONLY": "Vain laitteella",
+      "BACKED_UP": "Varmuuskopioitu",
+      "NOT_BACKED_UP": "Ei varmuuskopioitu"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Tällä laitteella on jo pääsyavain tilillesi.",
+      "SAVE_FAILED": "Pääsyavainta ei voitu tallentaa. Yritä uudelleen."
+    }
+  }
+}

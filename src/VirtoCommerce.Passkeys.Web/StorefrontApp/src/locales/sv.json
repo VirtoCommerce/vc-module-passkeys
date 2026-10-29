@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Nycklar",
+        "add_button": "Lägg till nyckel",
+        "description": "Logga in med fingeravtryck, ansikte, enhetens pinkod eller en maskinvarubaserad säkerhetsnyckel i stället för ditt lösenord.",
+        "no_passkeys": "Du har inga nycklar ännu.",
+        "already_registered": "Den här enheten har redan en nyckel för ditt konto.",
+        "states": {
+          "DeviceOnly": "Endast på enheten",
+          "BackedUp": "Säkerhetskopierad",
+          "NotBackedUp": "Inte säkerhetskopierad"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Nycklar är inaktiverade",
+      "invalid_passkey_attestation": "Nyckeln kunde inte verifieras",
+      "passkey_for_another_user": "Nyckeln skapades för en annan användare"
+    },
+    "sign_in": {
+      "button_text": "Logga in med nyckel"
+    }
+  }
+}

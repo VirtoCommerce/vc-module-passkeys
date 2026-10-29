@@ -1,0 +1,16 @@
+{
+  "PASSKEYS": {
+    "TITLE": "Passkey",
+    "SIGN_IN": "Accedi con una passkey",
+    "ADD": "Aggiungi una passkey",
+    "STATES": {
+      "DEVICE_ONLY": "Solo sul dispositivo",
+      "BACKED_UP": "Con backup",
+      "NOT_BACKED_UP": "Senza backup"
+    },
+    "ERRORS": {
+      "ALREADY_REGISTERED": "Questo dispositivo ha già una passkey per il tuo account.",
+      "SAVE_FAILED": "Impossibile salvare la passkey. Riprova."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Tilgangsnøkler",
+        "add_button": "Legg til tilgangsnøkkel",
+        "description": "Logg inn med fingeravtrykk, ansikt, enhetens PIN-kode eller en maskinvarebasert sikkerhetsnøkkel i stedet for passordet ditt.",
+        "no_passkeys": "Du har ingen tilgangsnøkler ennå.",
+        "already_registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din.",
+        "states": {
+          "DeviceOnly": "Kun på enheten",
+          "BackedUp": "Sikkerhetskopiert",
+          "NotBackedUp": "Ikke sikkerhetskopiert"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "Tilgangsnøkler er deaktivert",
+      "invalid_passkey_attestation": "Tilgangsnøkkelen kunne ikke bekreftes",
+      "passkey_for_another_user": "Tilgangsnøkkelen ble opprettet for en annen bruker"
+    },
+    "sign_in": {
+      "button_text": "Logg inn med tilgangsnøkkel"
+    }
+  }
+}

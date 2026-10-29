@@ -1,0 +1,26 @@
+{
+  "passkeys": {
+    "security_page": {
+      "passkeys": {
+        "title": "Chaves de acesso",
+        "add_button": "Adicionar chave de acesso",
+        "description": "Entre com sua impressão digital, seu rosto, o PIN do dispositivo ou uma chave de segurança de hardware em vez da sua senha.",
+        "no_passkeys": "Você ainda não tem chaves de acesso.",
+        "already_registered": "Este dispositivo já tem uma chave de acesso para a sua conta.",
+        "states": {
+          "DeviceOnly": "Somente no dispositivo",
+          "BackedUp": "Com backup",
+          "NotBackedUp": "Sem backup"
+        }
+      }
+    },
+    "identity_error": {
+      "passkeys_disabled": "As chaves de acesso estão desativadas",
+      "invalid_passkey_attestation": "Não foi possível verificar a chave de acesso",
+      "passkey_for_another_user": "A chave de acesso foi criada para outro usuário"
+    },
+    "sign_in": {
+      "button_text": "Entrar com chave de acesso"
+    }
+  }
+}

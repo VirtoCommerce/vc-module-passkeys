@@ -1,0 +1,16 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Nycklar",
+      "created": "Skapad"
+    },
+    "key-states": {
+      "device-only": "Endast på enheten",
+      "backed-up": "Säkerhetskopierad",
+      "not-backed-up": "Inte säkerhetskopierad"
+    },
+    "errors": {
+      "already-registered": "Den här enheten har redan en nyckel för ditt konto."
+    }
+  }
+}

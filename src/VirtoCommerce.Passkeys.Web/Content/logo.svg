@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Passkeys">
+  <title>Passkeys</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="92%" y2="100%">
+      <stop offset="0%" stop-color="#6E7E97"/>
+      <stop offset="100%" stop-color="#3E4C63"/>
+    </linearGradient>
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#10161F" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <!-- Glyph: golden key whose bow carries a fingerprint (passwordless, device-bound key) -->
+  <g transform="translate(64,64)" filter="url(#lift)">
+    <!-- Shaft + teeth, along the diagonal -->
+    <g transform="translate(-10,-10) rotate(45)" fill="#FFC24D">
+      <rect x="18" y="-6.5" width="46" height="13" rx="4"/>
+      <rect x="50" y="2" width="10" height="15" rx="3"/>
+      <rect x="35" y="2" width="9" height="11" rx="3"/>
+    </g>
+
+    <!-- Bow -->
+    <circle cx="-10" cy="-10" r="28" fill="#FFC24D"/>
+    <circle cx="-10" cy="-10" r="21" fill="#FFFFFF"/>
+
+    <!-- Fingerprint -->
+    <g transform="translate(-10,-10)" fill="none" stroke="#3B6FD6" stroke-width="3.6" stroke-linecap="round">
+      <path d="M0,3 V12"/>
+      <path d="M-5.5,9 V1 A5.5,5.5 0 0 1 5.5,1 V6"/>
+      <path d="M-11,11 V1 A11,11 0 0 1 11,1 V9"/>
+      <path d="M-16,5 V1 A16,16 0 0 1 16,1 V4"/>
+    </g>
+  </g>
+</svg>

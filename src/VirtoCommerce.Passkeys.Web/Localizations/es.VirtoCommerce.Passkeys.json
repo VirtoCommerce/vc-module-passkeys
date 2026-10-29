@@ -1,0 +1,16 @@
+{
+  "passkeys": {
+    "labels": {
+      "title": "Claves de acceso",
+      "created": "Creada"
+    },
+    "key-states": {
+      "device-only": "Solo en el dispositivo",
+      "backed-up": "Con copia de seguridad",
+      "not-backed-up": "Sin copia de seguridad"
+    },
+    "errors": {
+      "already-registered": "Este dispositivo ya tiene una clave de acceso para su cuenta."
+    }
+  }
+}
