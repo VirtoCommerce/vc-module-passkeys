@@ -6,8 +6,9 @@ if (AppDependencies !== undefined) {
 }
 
 angular.module(moduleName, [])
-    .run(['$window', '$translate', 'platformWebApp.authService', 'platformWebApp.signInMethodService', 'VirtoCommerce.Passkeys.passkeysApi',
-        function ($window, $translate, authService, signInMethodService, passkeysApi) {
+    .run(['$window', '$translate', 'platformWebApp.authService', 'platformWebApp.signInMethodService', 'platformWebApp.signInLogTypes',
+        'VirtoCommerce.Passkeys.passkeysApi',
+        function ($window, $translate, authService, signInMethodService, signInLogTypes, passkeysApi) {
             const extension = {
                 title: 'passkeys.labels.title',
                 logoUrl: 'Modules/$(VirtoCommerce.Passkeys)/Content/passkey-logo.svg',
@@ -20,6 +21,7 @@ angular.module(moduleName, [])
             }
 
             signInMethodService.extendSignInMethod('Passkey', extension);
+            signInLogTypes.register({ label: 'passkeys.sign-in-log.type-passkey', value: 'Passkey' });
 
             function isPasskeySupported() {
                 const publicKeyCredential = $window.PublicKeyCredential;

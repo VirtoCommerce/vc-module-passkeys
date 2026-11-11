@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "To urządzenie ma już klucz dostępu do Twojego konta."
+    },
+    "sign-in-log": {
+      "type-passkey": "Klucz dostępu"
     }
   }
 }
