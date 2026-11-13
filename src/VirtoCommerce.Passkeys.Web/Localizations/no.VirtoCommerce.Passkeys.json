@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "Denne enheten har allerede en tilgangsnøkkel for kontoen din."
+    },
+    "sign-in-log": {
+      "type-passkey": "Tilgangsnøkkel"
     }
   }
 }

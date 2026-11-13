@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "This device already has a passkey for your account."
+    },
+    "sign-in-log": {
+      "type-passkey": "Passkey"
     }
   }
 }
