@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "Den här enheten har redan en nyckel för ditt konto."
+    },
+    "sign-in-log": {
+      "type-passkey": "Nyckel"
     }
   }
 }

@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "Auf diesem Gerät ist bereits ein Passkey für Ihr Konto gespeichert."
+    },
+    "sign-in-log": {
+      "type-passkey": "Passkey"
     }
   }
 }

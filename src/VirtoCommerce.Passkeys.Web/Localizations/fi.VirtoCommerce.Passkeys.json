@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "Tällä laitteella on jo pääsyavain tilillesi."
+    },
+    "sign-in-log": {
+      "type-passkey": "Pääsyavain"
     }
   }
 }
