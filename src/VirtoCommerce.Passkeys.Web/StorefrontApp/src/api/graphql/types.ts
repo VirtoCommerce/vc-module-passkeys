@@ -31,6 +31,7 @@ export type IdentityResultType = {
 export type InputCreatePasskeyType = {
   credential: Scalars['String']['input'];
   name?: InputMaybe<Scalars['String']['input']>;
+  storeId: Scalars['String']['input'];
 };
 
 export type Mutations = {
@@ -47,6 +48,16 @@ export type Query = {
   passkeyRequestOptions?: Maybe<Scalars['String']['output']>;
 };
 
+
+export type QueryPasskeyCreationOptionsArgs = {
+  storeId: Scalars['String']['input'];
+};
+
+
+export type QueryPasskeyRequestOptionsArgs = {
+  storeId: Scalars['String']['input'];
+};
+
 export type CreatePasskeyMutationVariables = Exact<{
   command: InputCreatePasskeyType;
 }>;
@@ -54,20 +65,24 @@ export type CreatePasskeyMutationVariables = Exact<{
 
 export type CreatePasskeyMutation = { createPasskey?: { succeeded: boolean, errors?: Array<{ code?: string, description?: string }> } };
 
-export type GetPasskeyCreationOptionsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPasskeyCreationOptionsQueryVariables = Exact<{
+  storeId: Scalars['String']['input'];
+}>;
 
 
 export type GetPasskeyCreationOptionsQuery = { passkeyCreationOptions?: string };
 
-export type GetPasskeyRequestOptionsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPasskeyRequestOptionsQueryVariables = Exact<{
+  storeId: Scalars['String']['input'];
+}>;
 
 
 export type GetPasskeyRequestOptionsQuery = { passkeyRequestOptions?: string };
 
 
 export const CreatePasskeyDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreatePasskey"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"command"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"InputCreatePasskeyType"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createPasskey"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"command"},"value":{"kind":"Variable","name":{"kind":"Name","value":"command"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"succeeded"}},{"kind":"Field","name":{"kind":"Name","value":"errors"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"code"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<CreatePasskeyMutation, CreatePasskeyMutationVariables>;
-export const GetPasskeyCreationOptionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPasskeyCreationOptions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"passkeyCreationOptions"}}]}}]} as unknown as DocumentNode<GetPasskeyCreationOptionsQuery, GetPasskeyCreationOptionsQueryVariables>;
-export const GetPasskeyRequestOptionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPasskeyRequestOptions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"passkeyRequestOptions"}}]}}]} as unknown as DocumentNode<GetPasskeyRequestOptionsQuery, GetPasskeyRequestOptionsQueryVariables>;
+export const GetPasskeyCreationOptionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPasskeyCreationOptions"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"storeId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"passkeyCreationOptions"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"storeId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"storeId"}}}]}]}}]} as unknown as DocumentNode<GetPasskeyCreationOptionsQuery, GetPasskeyCreationOptionsQueryVariables>;
+export const GetPasskeyRequestOptionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPasskeyRequestOptions"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"storeId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"passkeyRequestOptions"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"storeId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"storeId"}}}]}]}}]} as unknown as DocumentNode<GetPasskeyRequestOptionsQuery, GetPasskeyRequestOptionsQueryVariables>;
 export const OperationNames = {
   Query: {
     GetPasskeyCreationOptions: 'GetPasskeyCreationOptions',

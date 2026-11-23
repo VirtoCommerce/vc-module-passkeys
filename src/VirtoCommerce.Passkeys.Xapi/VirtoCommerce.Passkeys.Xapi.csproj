@@ -8,5 +8,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VirtoCommerce.Passkeys.Core\VirtoCommerce.Passkeys.Core.csproj" />
+    <ProjectReference Include="..\VirtoCommerce.Passkeys.Data\VirtoCommerce.Passkeys.Data.csproj" />
   </ItemGroup>
 </Project>

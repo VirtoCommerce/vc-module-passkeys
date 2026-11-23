@@ -41,26 +41,32 @@ public class PasskeyGrantTypeHandler(
             return GrantValidationResult.Fail(BuildErrorResponse(context, missingParameters));
         }
 
-        PasskeyResult result;
+        var storeId = (string)context.Request.GetParameter(ModuleConstants.Security.Parameters.StoreId);
+        var result = await AuthenticateAsync(storeId, credential);
+
+        context.SignInResult = result.ToSignInResult();
+
+        return result.Outcome == PasskeyOutcome.Success
+            ? GrantValidationResult.Succeed(result.User)
+            : GrantValidationResult.Fail(BuildErrorResponse(context, result), result.User);
+    }
+
+    protected virtual async Task<PasskeyResult> AuthenticateAsync(string storeId, string credential)
+    {
+        if (!string.IsNullOrEmpty(storeId) && !await passkeyService.IsPasskeyEnabledAsync(storeId))
+        {
+            return PasskeyResult.Fail(PasskeyOutcome.PasskeyDisabled);
+        }
 
         try
         {
-            result = await passkeyService.AuthenticateAsync(credential);
+            return await passkeyService.AuthenticateAsync(credential);
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "Passkey authentication failed");
-            result = PasskeyResult.Fail(PasskeyOutcome.InvalidPasskey);
+            return PasskeyResult.Fail(PasskeyOutcome.InvalidPasskey);
         }
-
-        context.SignInResult = result.ToSignInResult();
-
-        if (result.Outcome != PasskeyOutcome.Success)
-        {
-            return GrantValidationResult.Fail(BuildErrorResponse(context, result), result.User);
-        }
-
-        return GrantValidationResult.Succeed(result.User);
     }
 
     protected override Task<bool> IsTwoFactorRequiredAsync(TokenRequestContext context)

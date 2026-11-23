@@ -7,6 +7,8 @@ namespace VirtoCommerce.Passkeys.Core.Services;
 
 public interface IPasskeyService
 {
+    Task<bool> IsPasskeyEnabledAsync(string storeId);
+
     Task<string> MakeRequestOptionsAsync();
 
     Task<PasskeyResult> AuthenticateAsync(string credential);

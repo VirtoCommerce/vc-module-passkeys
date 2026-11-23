@@ -1,4 +1,9 @@
+AutoCompare.dll
+index.html
+manifest.json
+mf-stats.json
 TimeZoneConverter.dll
+VirtoCommerce.ApplicationInsights.Core.dll
 VirtoCommerce.FileExperienceApi.Core.dll
 VirtoCommerce.Seo.Core.dll
 VirtoCommerce.XCart.Core.dll

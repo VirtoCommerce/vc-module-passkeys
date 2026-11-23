@@ -2,21 +2,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using VirtoCommerce.Passkeys.Core;
 using VirtoCommerce.Passkeys.Core.Models;
 using VirtoCommerce.Passkeys.Core.Services;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Security;
+using VirtoCommerce.StoreModule.Core.Services;
 
 namespace VirtoCommerce.Passkeys.Data.Services;
 
 public class PasskeyService(
     SignInManager<ApplicationUser> signInManager,
     IOptions<PasskeyOptions> passkeyOptions,
-    IOptions<AuthorizationOptions> authorizationOptions)
+    IOptions<AuthorizationOptions> authorizationOptions,
+    IStoreAuthenticationService storeAuthenticationService)
     : IPasskeyService
 {
     private readonly UserManager<ApplicationUser> _userManager = signInManager.UserManager;
+
+    public virtual async Task<bool> IsPasskeyEnabledAsync(string storeId)
+    {
+        var schemes = await storeAuthenticationService.GetStoreSchemesAsync(storeId, clone: false);
+
+        return schemes.Any(x => x.Name.EqualsIgnoreCase(ModuleConstants.Security.SignInType) && x.IsActive);
+    }
 
     public virtual Task<string> MakeRequestOptionsAsync()
     {

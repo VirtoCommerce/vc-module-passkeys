@@ -24,6 +24,7 @@ namespace VirtoCommerce.Passkeys.Tests;
 public class PasskeyGrantTypeHandlerTests
 {
     private const string _credential = "credential";
+    private const string _storeId = "store-id";
 
     private readonly Mock<IPasskeyService> _passkeyService = new();
     private readonly Mock<IEventPublisher> _eventPublisher = new();
@@ -88,6 +89,50 @@ public class PasskeyGrantTypeHandlerTests
         VerifySignInAttempt(ModuleConstants.Security.FailureReason.InvalidPasskey);
     }
 
+    [Fact]
+    public async Task HandleAsync_Should_RefuseWithoutAuthentication_When_StorePasskeySchemeIsInactive()
+    {
+        // Arrange
+        _passkeyService
+            .Setup(x => x.IsPasskeyEnabledAsync(_storeId))
+            .ReturnsAsync(false);
+
+        var context = CreateContext(_credential, _storeId);
+        var handler = CreateHandler();
+
+        // Act
+        var result = await handler.HandleAsync(context);
+
+        // Assert
+        var badRequest = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(SecurityErrorDescriber.LoginFailed().Code, ((TokenResponse)badRequest.Value).Code);
+        _passkeyService.Verify(x => x.AuthenticateAsync(It.IsAny<string>()), Times.Never);
+        VerifySignInAttempt(SignInFailureReason.NotAllowed);
+    }
+
+    [Fact]
+    public async Task HandleAsync_Should_Authenticate_When_StorePasskeySchemeIsActive()
+    {
+        // Arrange
+        _passkeyService
+            .Setup(x => x.IsPasskeyEnabledAsync(_storeId))
+            .ReturnsAsync(true);
+
+        _passkeyService
+            .Setup(x => x.AuthenticateAsync(_credential))
+            .ReturnsAsync(PasskeyResult.Fail(PasskeyOutcome.InvalidPasskey));
+
+        var context = CreateContext(_credential, _storeId);
+        var handler = CreateHandler();
+
+        // Act
+        await handler.HandleAsync(context);
+
+        // Assert
+        _passkeyService.Verify(x => x.AuthenticateAsync(_credential), Times.Once);
+        VerifySignInAttempt(ModuleConstants.Security.FailureReason.InvalidPasskey);
+    }
+
     [Theory]
     [InlineData(true, "user_is_temporary_locked_out")]
     [InlineData(false, "login_failed")]
@@ -142,13 +187,18 @@ public class PasskeyGrantTypeHandlerTests
             NullLogger<PasskeyGrantTypeHandler>.Instance);
     }
 
-    private static TokenRequestContext CreateContext(string credential)
+    private static TokenRequestContext CreateContext(string credential, string storeId = null)
     {
         var request = new OpenIddictRequest { GrantType = ModuleConstants.Security.GrantType };
 
         if (credential != null)
         {
             request.SetParameter(ModuleConstants.Security.Parameters.Credential, credential);
+        }
+
+        if (storeId != null)
+        {
+            request.SetParameter(ModuleConstants.Security.Parameters.StoreId, storeId);
         }
 
         return new TokenRequestContext
