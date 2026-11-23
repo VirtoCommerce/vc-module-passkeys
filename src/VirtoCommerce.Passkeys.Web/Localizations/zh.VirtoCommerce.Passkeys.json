@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "此设备已有您账户的通行密钥。"
+    },
+    "sign-in-log": {
+      "type-passkey": "通行密钥"
     }
   }
 }

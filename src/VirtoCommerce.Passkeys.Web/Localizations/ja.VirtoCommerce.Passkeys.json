@@ -11,6 +11,9 @@
     },
     "errors": {
       "already-registered": "このデバイスには既にお使いのアカウントのパスキーがあります。"
+    },
+    "sign-in-log": {
+      "type-passkey": "パスキー"
     }
   }
 }
