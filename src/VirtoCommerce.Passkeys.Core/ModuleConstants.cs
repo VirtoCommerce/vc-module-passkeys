@@ -10,6 +10,7 @@ public static class ModuleConstants
         public static class Parameters
         {
             public const string Credential = "credential";
+            public const string StoreId = "storeId";
         }
 
         public static class FailureReason

@@ -13,7 +13,3 @@ export async function isPasskeyAutofillSupported(): Promise<boolean> {
     PublicKeyCredential.isConditionalMediationAvailable()
   );
 }
-
-export function isPasskeyPromptCancelled(error: unknown): boolean {
-  return error instanceof DOMException && error.name === "NotAllowedError";
-}

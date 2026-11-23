@@ -1,3 +1,3 @@
-query GetPasskeyRequestOptions {
-  passkeyRequestOptions
+query GetPasskeyRequestOptions($storeId: String!) {
+  passkeyRequestOptions(storeId: $storeId)
 }

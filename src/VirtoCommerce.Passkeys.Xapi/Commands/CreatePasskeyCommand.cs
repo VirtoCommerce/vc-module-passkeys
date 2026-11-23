@@ -5,6 +5,8 @@ namespace VirtoCommerce.Passkeys.Xapi.Commands;
 
 public class CreatePasskeyCommand : SignInKeyCommand<IdentityResult>
 {
+    public string StoreId { get; set; }
+
     public string Credential { get; set; }
 
     public string Name { get; set; }

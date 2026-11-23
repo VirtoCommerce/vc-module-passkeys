@@ -1,17 +1,16 @@
-import { Logger, useErrorsTranslator, useNotifications } from "@vc-frontend/core";
+import { globals, Logger, SUPPRESS_ERROR_NOTIFICATIONS_CONTEXT } from "@vc-frontend/core";
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useCreatePasskeyMutation, getPasskeyCreationOptions } from "../api/graphql";
 import { PASSKEY_STATE_ICONS } from "../constants";
-import { isPasskeyPromptCancelled, isPasskeySupported } from "../utils";
+import { isPasskeySupported } from "../utils";
+import { usePasskeyErrors } from "./usePasskeyErrors";
 import type { PasskeyStateType } from "../constants";
-import type { IdentityErrorType, SignInKeyType, SignInMethodContributionType } from "@vc-frontend/core";
+import type { SignInKeyType, SignInMethodContributionType } from "@vc-frontend/core";
 
 export function usePasskeys(): SignInMethodContributionType {
   const { t, te } = useI18n();
-  const notifications = useNotifications();
-  const { translate: translatePasskeyError } = useErrorsTranslator<IdentityErrorType>("passkeys.identity_error");
-  const { translate: translateIdentityError } = useErrorsTranslator<IdentityErrorType>("identity_error");
+  const { handleExpectedPasskeyError, showError } = usePasskeyErrors();
 
   const { mutate: createPasskeyMutation } = useCreatePasskeyMutation();
 
@@ -21,7 +20,7 @@ export function usePasskeys(): SignInMethodContributionType {
     creating.value = true;
 
     try {
-      const options = await getPasskeyCreationOptions();
+      const options = await getPasskeyCreationOptions(globals.storeId, SUPPRESS_ERROR_NOTIFICATIONS_CONTEXT);
       if (!options) {
         return;
       }
@@ -32,20 +31,15 @@ export function usePasskeys(): SignInMethodContributionType {
         return;
       }
 
-      const identityResult = (await createPasskeyMutation({ command: { credential: JSON.stringify(credential) } }))
-        ?.data?.createPasskey;
+      const identityResult = (
+        await createPasskeyMutation({ command: { storeId: globals.storeId, credential: JSON.stringify(credential) } })
+      )?.data?.createPasskey;
 
       if (!identityResult?.succeeded) {
-        showError(identityResult);
+        showError(identityResult?.errors?.[0]);
       }
     } catch (e) {
-      if (isPasskeyPromptCancelled(e)) {
-        return;
-      }
-
-      if (e instanceof DOMException && e.name === "InvalidStateError") {
-        notifications.error({ text: t("passkeys.security_page.passkeys.already_registered") });
-
+      if (handleExpectedPasskeyError(e)) {
         return;
       }
 
@@ -64,16 +58,6 @@ export function usePasskeys(): SignInMethodContributionType {
     const stateKey = `passkeys.security_page.passkeys.states.${key.state}`;
 
     return key.state && te(stateKey) ? [t(stateKey)] : [];
-  }
-
-  function showError(identityResult?: { errors?: IdentityErrorType[] }): void {
-    const error = identityResult?.errors?.[0];
-    const translate =
-      error && te(`passkeys.identity_error.${error.code}`) ? translatePasskeyError : translateIdentityError;
-
-    notifications.error({
-      text: (error && translate(error)) || t("common.messages.something_went_wrong"),
-    });
   }
 
   return {

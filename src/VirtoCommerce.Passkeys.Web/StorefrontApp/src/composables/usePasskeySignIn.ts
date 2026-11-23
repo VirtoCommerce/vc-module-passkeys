@@ -1,17 +1,14 @@
 import {
   globals,
   Logger,
+  SUPPRESS_ERROR_NOTIFICATIONS_CONTEXT,
   useAnalytics,
   useAuth,
-  useErrorsTranslator,
-  useNotifications,
   useSignMeIn,
 } from "@vc-frontend/core";
 import { ref } from "vue";
-import { useI18n } from "vue-i18n";
 import { getPasskeyRequestOptions } from "../api/graphql";
-import { isPasskeyPromptCancelled } from "../utils";
-import type { IdentityErrorType } from "@vc-frontend/core";
+import { usePasskeyErrors } from "./usePasskeyErrors";
 
 type PasskeySignInOptionsType = Omit<CredentialRequestOptions, "publicKey"> & { returnUrl?: string };
 
@@ -19,12 +16,10 @@ const ANALYTICS_LOGIN_METHOD = "passkey";
 const GRANT_TYPE = "passkey";
 
 export function usePasskeySignIn() {
-  const { t } = useI18n();
   const { authorizeWithGrant, errors: authErrors } = useAuth();
   const { signIn: signMeIn } = useSignMeIn();
-  const { translate } = useErrorsTranslator<IdentityErrorType>("shared.account.sign_in_form.errors");
   const { analytics } = useAnalytics();
-  const notifications = useNotifications();
+  const { handleExpectedPasskeyError, showError } = usePasskeyErrors();
 
   const loading = ref(false);
 
@@ -34,8 +29,9 @@ export function usePasskeySignIn() {
     }
 
     const { returnUrl, ...requestOptions } = options;
+    const isUserInitiated = requestOptions.mediation !== "conditional";
     // An autofill request waits until the user picks a passkey, so it must not block the button meanwhile
-    let isLoadingOwner = requestOptions.mediation !== "conditional";
+    let isLoadingOwner = isUserInitiated;
     loading.value = isLoadingOwner;
 
     try {
@@ -60,7 +56,7 @@ export function usePasskeySignIn() {
 
       analytics("login", ANALYTICS_LOGIN_METHOD, { success: true });
     } catch (e) {
-      if (isPasskeyPromptCancelled(e) || requestOptions.signal?.aborted) {
+      if (requestOptions.signal?.aborted || handleExpectedPasskeyError(e, { notify: isUserInitiated })) {
         return;
       }
 
@@ -69,11 +65,7 @@ export function usePasskeySignIn() {
       Logger.error(`${usePasskeySignIn.name}.${signIn.name}`, e);
       analytics("login", ANALYTICS_LOGIN_METHOD, { success: false, errors: error?.code ?? String(e) });
 
-      notifications.error({
-        duration: 5000,
-        single: true,
-        text: (error && translate(error)) || t("common.messages.something_went_wrong"),
-      });
+      showError(error);
     } finally {
       if (isLoadingOwner) {
         loading.value = false;
@@ -84,7 +76,7 @@ export function usePasskeySignIn() {
   async function getCredential(
     requestOptions: Omit<CredentialRequestOptions, "publicKey">,
   ): Promise<Credential | null> {
-    const options = await getPasskeyRequestOptions();
+    const options = await getPasskeyRequestOptions(globals.storeId, SUPPRESS_ERROR_NOTIFICATIONS_CONTEXT);
     if (!options) {
       return null;
     }
